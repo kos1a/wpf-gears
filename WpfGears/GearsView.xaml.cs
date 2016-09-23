@@ -16,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace CustomControls
 {
-    /// <summary>
-    /// Interaction logic for GearsView.xaml
-    /// </summary>
     public partial class GearsView : UserControl
     {
         public GearsView()
@@ -27,26 +24,30 @@ namespace CustomControls
         }
 
 
-        DoubleAnimation da = null;
+        DoubleAnimation gearAAnimation = null;
 
-        DoubleAnimation db = null;
+        DoubleAnimation gearBAnimation = null;
 
         public void StartAnim()
         {
-            da = new DoubleAnimation();
-            da.From = 0;
-            da.To = 360;
-            da.Duration = new Duration(TimeSpan.FromSeconds(2));
-            da.RepeatBehavior = RepeatBehavior.Forever;
+            gearAAnimation = new DoubleAnimation
+            {
+                From = 0,
+                To = 360,
+                Duration = new Duration(TimeSpan.FromSeconds(2)),
+                RepeatBehavior = RepeatBehavior.Forever
+            };
 
-            db = new DoubleAnimation();
-            db.From = 360;
-            db.To = 0;
-            db.Duration = new Duration(TimeSpan.FromSeconds(2));
-            db.RepeatBehavior = RepeatBehavior.Forever;
+            gearBAnimation = new DoubleAnimation
+            {
+                From = 360,
+                To = 0,
+                Duration = new Duration(TimeSpan.FromSeconds(2)),
+                RepeatBehavior = RepeatBehavior.Forever
+            };
 
-            gear1.rotateTransform.BeginAnimation(RotateTransform.AngleProperty, da);
-            gear2.rotateTransform.BeginAnimation(RotateTransform.AngleProperty, db);
+            gear1.rotateTransform.BeginAnimation(RotateTransform.AngleProperty, gearAAnimation);
+            gear2.rotateTransform.BeginAnimation(RotateTransform.AngleProperty, gearBAnimation);
         }
 
         public void StopAnim()
