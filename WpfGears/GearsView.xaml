@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="CustomControls.GearsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CustomControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="150" d:DesignWidth="150">
+    
+        <Canvas RenderTransformOrigin="0.5,0.5">
+            <Canvas.RenderTransform>
+                <TransformGroup>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Canvas.RenderTransform>
+            <local:GearView x:Name="gear1">
+
+            </local:GearView>
+            <local:GearView x:Name="gear2" Canvas.Left="40" Canvas.Top="45">
+
+            </local:GearView>
+        </Canvas>
+</UserControl>
