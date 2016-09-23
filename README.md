@@ -6,8 +6,6 @@ WPF spinning gear control.
 
 
 ```
-#!C#
-
   <local:GearsView x:Name="gears" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
             <local:GearsView.Effect>
                 <DropShadowEffect/>
@@ -27,7 +25,5 @@ And then to start animation:
 
 
 ```
-#!c#
-
 gears.StartAnim();
 ```
